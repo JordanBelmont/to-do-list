@@ -1,10 +1,22 @@
 import React from 'react'
 
-const Todos = () => {
+const Todos = ({todos}) => {
+   
+   const todoList = todos.length ? (
+      todos.map(todo => {
+         return (
+            <div className="collection-item" key={todo.id}>
+               <span>{todo.content}</span>
+            </div>
+         )
+      })
+   ) : (
+      <p className="center">You Have Nothing To Do</p>
+   )
 
    return (
       <div className="todos collection">
-
+         {todoList}
       </div>
    )
 }
