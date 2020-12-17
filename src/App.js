@@ -1,36 +1,16 @@
-import React, { Component } from 'react';
-import Todos from './Todos';
-import AddTodo from './AddTodo';
+import React from 'react';
+import Form from './components/Form';
+import './App.css';
 
-class App extends Component {
-   state = {
-      todos: [
-         { id: 1, content: 'buy some milk' },
-         { id: 2, content: 'play mario kart' }
-      ]
-   }
-
-   deleteTodo = (id) => {
-      const todos = this.state.todos.filter(todo => {
-         return todo.id !== id
-      });
-      this.setState({
-         todos
-      })
-   }
-
-   render() {
-      return (
-         <div className="todo-app container">
-            <h1 className="center blue-text">Todo's</h1>
-            <AddTodo addTodo={this.addTodo} />
-            <Todos 
-            todos={this.state.todos} 
-            deleteTodo={this.deleteTodo} 
-            />
-         </div>
-      );
-   }
+function App() {
+   return (
+      <div className="App">
+         <header>
+            <h1>Wanna Do List</h1>
+         </header>
+         <Form />
+      </div>
+   );
 }
 
 export default App;
