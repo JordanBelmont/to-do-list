@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ setInputText }) => {
+const Form = ({ inputText, setInputText, todos, setTodos }) => {
    const inputTextHandler = (e) => {
       console.log(e.target.value);
       setInputText(e.target.value);
@@ -8,11 +8,21 @@ const Form = ({ setInputText }) => {
 
    const submitTodoHandler = (e) => {
       e.preventDefault();
+      setTodos([
+         ...todos, {
+            id: Math.random() * 1000, 
+            text: inputText, 
+            completed: false, 
+         }
+         // install package to generate unique id number
+      ]);
+      setInputText("");
    }
 
    return(
       <form>
          <input 
+         value={inputText}
          onChange= {inputTextHandler} 
          type="text" 
          className="todo-input" 
