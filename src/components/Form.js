@@ -1,24 +1,27 @@
 import React from 'react';
 
+// Props
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
    
+   // Gets the value of the input text as it's being typed
    const inputTextHandler = (e) => {
       setInputText(e.target.value);
    };
 
+   // Turns the submitted data into an object
    const submitTodoHandler = (e) => {
       e.preventDefault();
       setTodos([
          ...todos, {
-            id: Math.random() * 1000, 
-            text: inputText, 
-            completed: false, 
+            id: Math.random() * 1000, // Can install package to generate unique id number instead of math
+            text: inputText, // text taken from state
+            completed: false // status set to uncompleted
          }
-         // install package to generate unique id number
       ]);
-      setInputText("");
+      setInputText(""); // resets input bar
    }
 
+   // 
    const statusHandler = (e) => {
       setStatus(e.target.value);
    }
@@ -26,22 +29,22 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
    return(
       <form>
          <input 
-         value={inputText}
-         onChange= {inputTextHandler} 
          type="text" 
-         className="todo-input" 
+         value={inputText}
+         className="todo-input"
+         onChange={inputTextHandler}
          />
          <button 
-         onClick={submitTodoHandler} 
          type="submit" 
          className="todo-button"
+         onClick={submitTodoHandler} 
          >
             <i className="fas fa-plus-square"></i>
          </button>
          <div className="select">
             <select 
             name="todos" 
-            className="filter-todo"
+            className="todo-select"
             onChange={statusHandler}
             >
                <option value="all">All</option>

@@ -5,6 +5,7 @@ import './App.css';
 
 function App() {
 
+   // States
    const [inputText, setInputText] = useState("");
    const [todos, setTodos] = useState([]);
    const [status, setStatus] = useState("all");
@@ -36,28 +37,26 @@ function App() {
       }
    };
 
-   // SAVE TO LOCAL STORAGE
-   // saving and pushing what we have in state
+   // Saves and pushes the data in state to local storage
    const saveLocalTodos = () => {
       localStorage.setItem('todos', JSON.stringify(todos));
    };
    
-   // CHECK LOCAL STORAGE 
-   // if there's nothing - set an empty array
-   // if there's something - push it to state
+   // Checks local storage
+
    const getLocalTodos = () => {
       if (localStorage.getItem('todos') === null) {
-         localStorage.setItem('todos', JSON.stringify([]));
+         localStorage.setItem('todos', JSON.stringify([])); // if there's nothing - set an empty array
       } else {
-         let todoLocal = JSON.parse(localStorage.getItem('todos'));
-         setTodos(todoLocal);
+         let todoLocal = JSON.parse(localStorage.getItem('todos')); 
+         setTodos(todoLocal); // if there's something - push it to state
       }
    }
 
    return (
       <div className="App">
          <header>
-            <h1>Wanna Do List</h1>
+            <h1>Wanna-Do List</h1>
          </header>
          <Form 
          setStatus={setStatus}

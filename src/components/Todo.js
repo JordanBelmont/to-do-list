@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Props
 const Todo = ({ text, todo, todos, setTodos }) => {
 
    const deleteHandler = () => {
