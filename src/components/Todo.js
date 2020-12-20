@@ -8,7 +8,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
 
    const completeHandler = () => {
       setTodos(todos.map(item => {
-         if(item.id === todo.id) {
+         if (item.id === todo.id) {
             return {
                ...item, completed: !item.completed
             }
@@ -19,7 +19,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
 
    return(
       <div className="todo">
-         <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
+         <li className={`todo-item ${todo.completed ? "completed" : ''}`}>{text}</li>
          <button className="complete-btn" onClick={completeHandler}>
             <i className="fas fa-check"></i>
          </button>

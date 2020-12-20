@@ -3,7 +3,6 @@ import React from 'react';
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
    
    const inputTextHandler = (e) => {
-      console.log(e.target.value);
       setInputText(e.target.value);
    };
 
@@ -46,8 +45,8 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
             onChange={statusHandler}
             >
                <option value="all">All</option>
-               <option value="Complete">Complete</option>
-               <option value="Uncomplete">Uncomplete</option>
+               <option value="completed">Completed</option>
+               <option value="uncompleted">Uncompleted</option>
             </select>
          </div>
       </form>
