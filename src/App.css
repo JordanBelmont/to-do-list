@@ -1,3 +1,10 @@
+/* Fonts */
+@font-face {
+      font-family: 'coffee&tea';
+      font-weight: normal;
+      src: url('../src/fonts/coffee&tea.ttf') format('truetype')
+   }
+
 * {
    margin: 0;
    padding: 0;
@@ -5,9 +12,11 @@
 }
 
 body {
-   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-   color: white;
-   font-family: "Poppins", sans-serif;
+   background-image: url('../src/images/paper.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   font-family: 'Poppins', sans-serif;
    min-height: 100vh;
 }
 
@@ -23,17 +32,41 @@ form {
    align-items: center;
 }
 
-form input, 
-form button {
+h1 {
+   font-size: 5rem;
+}
+
+.wanna {
+   font-family: 'coffee&tea', sans-serif;
+   letter-spacing: 1px;
+   color: red;
+   transform: rotateZ(-10deg);
+   position: absolute;
+   top: 4%;
+   right: 52%;
+}
+
+.to-do {
+   text-decoration: line-through red;
+   margin-right: 1rem;
+}
+
+form input {
+   font-family: 'coffee&tea', sans-serif;
+   letter-spacing: 1px;
    padding: 0.5rem;
    font-size: 2rem;
    border: none;
    background: white;
+   width: 25%
 }
 
 form button {
-   color: #ff6f47;
-   background: #f7fffe;
+   padding: 0.4rem;
+   font-size: 2rem;
+   border: none;
+   background: white;
+   color: #000000;
    cursor: pointer;
    transition: all 0.3s ease;
 }
@@ -50,9 +83,11 @@ form button {
 }
 
 .todo {
-   margin: 0.5rem;
+   font-family: 'coffee&tea', sans-serif;
+   letter-spacing: 1px;
+   margin-bottom: 1rem;
    background: white;
-   font-size: 1.5rem;
+   font-size: 3rem;
    color: black;
    display: flex;
    justify-content: space-between;
@@ -61,20 +96,23 @@ form button {
 }
 
 .todo-select {
-   padding: 1rem;
+   width: 11rem;
+   padding: 0.9rem;
+   font-size: 1rem
 }
 
 .todo li {
    flex: 1;
 }
 
-.trash-btn, .complete-btn {
-   background: #ff6f47;
-   color: white;
-   border: none;
+.delete-btn, 
+.complete-btn {
+   background: #ff4d00;
+   color: black;
+   border: 2px black;
    padding: 1rem;
    cursor: pointer;
-   font-size: 1rem;
+   margin: 0.5rem;
 }
 
 .complete-btn {
@@ -83,15 +121,14 @@ form button {
 
 .todo-item {
    padding: 0rem 0.5rem;
+   text-align: center;
 }
 
-.fa-trash, .fa-check {
+.fa-dizzy,
+.fa-laugh,
+.fa-sort-down {
    pointer-events: none;
-}
-
-.fall {
-   transform: translateY(10rem) rotateZ(20deg);
-   opacity: 0;
+   font-size: 2rem;
 }
 
 .completed {
@@ -112,8 +149,6 @@ select {
    background-image: none;
 }
 
-/* Custom Select */
-
 .select {
    margin: 1rem;
    position: relative;
@@ -121,29 +156,18 @@ select {
 }
 
 select {
-   color: #ff6f47;
-   font-family: "Poppins", sans-serif;
+   color: #000000;
+   font-family: 'Poppins', sans-serif;
    cursor: pointer;
-   width: 12rem;
 }
-
-/* Arrow */
 
 .select::after {
    content: "\25BC";
    position: absolute;
    top: 0;
    right: 0;
-   padding: 1rem;
-   background: #ff6f47;
+   padding: 1.1rem;
+   color: #000000;
    cursor: pointer;
    pointer-events: none;
 }
-
-/* Transition */
-
-/*
- .select:hover::after {
-   transform: scale(1.5);
- }
- */

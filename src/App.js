@@ -56,7 +56,9 @@ function App() {
    return (
       <div className="App">
          <header>
-            <h1>Wanna-Do List</h1>
+            <h1 className="wanna">Wanna-Do</h1>
+            <h1 className="to-do">To-Do</h1>
+            <h1>List</h1>
          </header>
          <Form 
          setStatus={setStatus}

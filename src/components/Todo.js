@@ -22,10 +22,10 @@ const Todo = ({ text, todo, todos, setTodos }) => {
       <div className="todo">
          <li className={`todo-item ${todo.completed ? "completed" : ''}`}>{text}</li>
          <button className="complete-btn" onClick={completeHandler}>
-            <i className="fas fa-check"></i>
+            <i className="far fa-laugh"></i>
          </button>
-         <button className="trash-btn" onClick={deleteHandler}>
-            <i className="fas fa-trash"></i>
+         <button className="delete-btn" onClick={deleteHandler}>
+            <i className="far fa-dizzy"></i>
          </button>
       </div>
    );
