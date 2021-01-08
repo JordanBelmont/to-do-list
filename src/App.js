@@ -55,11 +55,11 @@ function App() {
 
    return (
       <div className="App">
-         <header>
+         <div className="todo-header">
             <h1 className="wanna">Wanna-Do</h1>
             <h1 className="to-do">To-Do</h1>
-            <h1>List</h1>
-         </header>
+            <h1 className="list">List</h1>
+         </div>
          <Form 
          setStatus={setStatus}
          todos={todos} 

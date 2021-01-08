@@ -27,7 +27,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
    }
 
    return(
-      <form>
+      <form className="todo-form">
          <input 
          type="text" 
          value={inputText}
